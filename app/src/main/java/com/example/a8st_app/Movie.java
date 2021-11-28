@@ -6,7 +6,7 @@ public class Movie {
     String rankInten;
     String rankOldAndNew;
     String movieCd;
-    String movleNm;
+    String movieNm;
     String openDt;
     String salesAmt;
     String salesShare;
