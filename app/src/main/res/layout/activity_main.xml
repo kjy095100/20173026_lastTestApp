@@ -13,19 +13,30 @@
         android:layout_height="wrap_content"
         android:text="https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=68f404d3c42e45c266d5ee58323eedfa&#38;targetDt=20211001"
         android:hint="사이트 주소 입력"
+        android:background="@color/black"
+        android:textColor="@color/white"
         />
 
     <Button
         android:id="@+id/xbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/black"
         android:text="요청하기" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:text="홈으로" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"/>
+        android:layout_height="646dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/black" />
 
 
 </LinearLayout>

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.app.DownloadManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +25,7 @@ import com.google.gson.Gson;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity {
     EditText editText;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         editText = findViewById(R.id.xeditText);
         textView = findViewById(R.id.textView);
 
@@ -47,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeRequest();
+            }
+        });
+
+        Button backButton = (Button) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("message", "HOME");
+
+                setResult(Activity.RESULT_OK, resultIntent);
+                finish();
             }
         });
 
@@ -110,5 +124,6 @@ public class MainActivity extends AppCompatActivity {
                 adapter.addItem(movie);
             }
             adapter.notifyDataSetChanged();
+
         }
     }
